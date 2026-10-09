@@ -10,7 +10,14 @@ const languageMenu=document.getElementById("languageMenu");
 const currentLanguageFlag=document.getElementById("currentLanguageFlag");
 const currentLanguageCode=document.getElementById("currentLanguageCode");
 
-const languageFlags={es:"🇪🇸",en:"🇬🇧",pt:"🇵🇹",de:"🇩🇪",fr:"🇫🇷",ja:"🇯🇵"};
+const languageFlags={
+  es:"./assets/flags/es.svg",
+  en:"./assets/flags/gb.svg",
+  pt:"./assets/flags/pt.svg",
+  de:"./assets/flags/de.svg",
+  fr:"./assets/flags/fr.svg",
+  ja:"./assets/flags/jp.svg"
+};
 const languageLabels={
   es:"ES",
   en:"EN",
@@ -37,7 +44,7 @@ function syncLanguageDropdown(){
   if(!languageButton||!languageMenu) return;
 
   if(currentLanguageFlag){
-    currentLanguageFlag.textContent=languageFlags[currentLanguage]||languageFlags.es;
+    currentLanguageFlag.src=languageFlags[currentLanguage]||languageFlags.es;
   }
   if(currentLanguageCode){
     currentLanguageCode.textContent=languageLabels[currentLanguage]||"ES";
