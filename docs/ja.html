@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Second Life 用 Face Animator v1.6.2 ユーザーマニュアル。">
-  <meta name="theme-color" content="#5745d8">
-  <title>Face Animator · ユーザーマニュアル</title>
-  <link rel="stylesheet" href="./styles.css?v=face-animator-20261009-1">
+  <meta name="description" content="Sonja Creations が公開する Second Life 用 Face Animator 公式ユーザーマニュアル。">
+  <meta name="theme-color" content="#18283D">
+  <title>Face Animator · Sonja Creations</title>
+  <link rel="icon" type="image/png" href="./assets/brand/icono2.png">
+  <link rel="apple-touch-icon" href="./assets/brand/icono2.png">
+  <link rel="stylesheet" href="./styles.css?v=sonja-creations-20261009-1">
 </head>
 <body>
 <header class="topbar">
   <button class="icon-button mobile-only" id="menuButton" aria-label="Menu">☰</button>
-  <a class="brand" href="#inicio" aria-label="Face Animator"><span class="brand-mark">FA</span><span><strong>Face Animator</strong><small>ユーザーマニュアル · Second Life</small></span></a>
+  <a class="brand brand-sonja" href="#inicio" aria-label="Face Animator by Sonja Creations">
+      <img class="brand-icon" src="./assets/brand/icono2.png" alt="" width="40" height="40">
+      <span><strong>Face Animator</strong><small>公式マニュアル · Sonja Creations</small></span>
+    </a>
   <div class="top-actions">
     <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="マニュアルを検索…" aria-label="マニュアルを検索…"></label>
     <div class="language-dropdown" id="languageDropdown">
@@ -29,17 +34,31 @@
   </div>
 </header>
 <div class="layout">
-  <aside class="sidebar" id="sidebar"><nav><a href="#inicio">ホーム</a><a href="#compatibilidade">互換性</a><a href="#instalacion">インストール</a><div class="nav-group">設定</div><a href="#config">Config Face Animator</a><a href="#modos">MODE</a><a href="#faces">FACES と START</a><a href="#delays">DELAYS</a><a href="#repeat">REPEAT</a><div class="nav-group">高度な使用</div><a href="#varias-partes">複数 PART</a><a href="#mesh">Mesh の準備</a><div class="nav-group">ヘルプ</div><a href="#problemas">トラブルシューティング</a><a href="#referencia">クイックリファレンス</a></nav><div class="sidebar-footer"><span class="pill">Manual v1.0</span><span class="muted">Face Animator v1.6.2</span></div></aside>
+  <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="./assets/brand/icono2.png" alt="" width="46" height="46">
+        <div><strong>Sonja Creations</strong><small>Code. Create. Imagine.</small></div>
+      </div>
+      <nav><a href="#inicio">ホーム</a><a href="#compatibilidade">互換性</a><a href="#instalacion">インストール</a><div class="nav-group">設定</div><a href="#config">Config Face Animator</a><a href="#modos">MODE</a><a href="#faces">FACES と START</a><a href="#delays">DELAYS</a><a href="#repeat">REPEAT</a><div class="nav-group">高度な使用</div><a href="#varias-partes">複数 PART</a><a href="#mesh">Prims と mesh</a><div class="nav-group">ヘルプ</div><a href="#problemas">トラブルシューティング</a><a href="#referencia">クイックリファレンス</a></nav><div class="sidebar-footer"><span class="pill">Manual v1.0</span><span class="muted">Face Animator v1.6.2</span></div></aside>
   <main class="content" id="content">
-<section id="inicio" class="hero searchable">
+<section id="inicio" class="hero hero-sonja searchable">
   <div class="hero-copy">
-    <span class="eyebrow">Second Life · 公式製品ドキュメント</span>
+    <div class="sonja-kicker"><img src="./assets/brand/icono2.png" alt="" width="24" height="24"><span>SONJA CREATIONS · 公式製品ドキュメント</span></div>
     <h1>Face Animator</h1>
-    <p class="lead">標準 prim、リンクオブジェクト、mesh の個別 face の表示を切り替えてアニメーションさせる設定可能なシステムです。</p>
-    <div class="hero-actions"><a class="button primary" href="#compatibilidade">仕組み</a><a class="button ghost" href="#referencia">クイックリファレンス</a></div>
-    <div class="badges"><span>標準 prim</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>最大 64 PART</span></div>
+    <p class="lead">標準 prim、リンクオブジェクト、mesh の face 表示を Second Life 内で直接アニメーションします。</p>
+    <div class="hero-actions"><a class="button primary" href="#compatibilidad">仕組み</a><a class="button ghost" href="#referencia">クイックリファレンス</a></div>
+    <div class="badges"><span>STANDARD PRIMS</span><span>MESH</span><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span></div>
   </div>
-  <div class="hero-card"><h3>2つの使い方</h3><ul class="check-list"><li>標準 prim: 既存の face をそのままアニメーション。</li><li>Mesh: 既存の texture face をそのままアニメーション。</li><li>高度な mesh: 各 face を異なる事前作成 geometry state として使用。</li><li>Face Animator は geometry を変形せず、表示状態を制御します。</li></ul></div>
+  <div class="hero-card sonja-hero-card">
+    <div class="hero-brand-icon"><img src="./assets/brand/icono2.png" alt="Sonja Creations"></div>
+    <h3>1つのシステム。複数の用途。</h3>
+    <ul class="check-list">
+      <li>標準 prim の既存 face を直接アニメーション。</li>
+      <li>複数のリンクパーツを個別に制御。</li>
+      <li>mesh の既存 texture face をアニメーション。</li>
+      <li>準備した mesh state で見かけ上の geometry animation を作成。</li>
+    </ul>
+  </div>
 </section>
 <section id="compatibilidade" class="doc-section searchable">
   <div class="section-heading"><span class="step">01</span><div><h2>どのオブジェクトをアニメーションできますか？</h2><p>Face Animator は Second Life prim の番号付き face を使用します。</p></div></div>
@@ -92,7 +111,11 @@ FACES=0,1,2,3,4
 START=0
 DELAYS=400,300,200,300,400
 REPEAT=2
-REPEAT_DELAY=300</code></pre><table><thead><tr><th>項目</th><th>ルール</th></tr></thead><tbody><tr><td>PART</td><td>リンク prim の正確で一意な名前。</td></tr><tr><td>MODE</td><td>PENDULUM、LINEAR、RANDOM。</td></tr><tr><td>FACES</td><td>2..8 個のアニメーション face index。</td></tr><tr><td>START</td><td>FACES に含まれる必要があります。</td></tr><tr><td>DELAYS</td><td>FACE ごとに 1 値、100..60000 ms。</td></tr><tr><td>REPEAT</td><td>任意: 空、1..1000000、INFINITE。</td></tr><tr><td>REPEAT_DELAY</td><td>任意: 0..86400000 ms。REPEAT 無効時は無視。</td></tr></tbody></table></section><div id="noResults" class="no-results" hidden><h2>一致する項目がありません</h2></div><footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Face Animator の公開ドキュメントです。製品のソースコードはこのマニュアルでは公開されません。</span></footer></main>
+REPEAT_DELAY=300</code></pre><table><thead><tr><th>項目</th><th>ルール</th></tr></thead><tbody><tr><td>PART</td><td>リンク prim の正確で一意な名前。</td></tr><tr><td>MODE</td><td>PENDULUM、LINEAR、RANDOM。</td></tr><tr><td>FACES</td><td>2..8 個のアニメーション face index。</td></tr><tr><td>START</td><td>FACES に含まれる必要があります。</td></tr><tr><td>DELAYS</td><td>FACE ごとに 1 値、100..60000 ms。</td></tr><tr><td>REPEAT</td><td>任意: 空、1..1000000、INFINITE。</td></tr><tr><td>REPEAT_DELAY</td><td>任意: 0..86400000 ms。REPEAT 無効時は無視。</td></tr></tbody></table></section><div id="noResults" class="no-results" hidden><h2>一致する項目がありません</h2></div><footer class="site-footer sonja-footer">
+        <div class="footer-brand"><img src="./assets/brand/icono2.png" alt="" width="34" height="34"><div><strong>Sonja Creations</strong><span>Code. Create. Imagine.</span></div></div>
+        <div class="footer-product"><strong>Face Animator v1.6.2</strong><span>公式製品ドキュメント</span></div>
+        <div class="footer-copy">© 2026 Sonja Creations. All rights reserved.</div>
+      </footer></main>
 </div>
 <script src="./app.js?v=face-animator-20261009-3"></script>
 </body></html>
