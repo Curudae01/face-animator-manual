@@ -64,29 +64,30 @@
   <div class="hero-copy">
     <span class="eyebrow">Second Life · official product documentation</span>
     <h1>Face Animator</h1>
-    <p class="lead">Visual animation for specially prepared meshes containing multiple geometry states distributed across texture faces.</p>
-    <div class="hero-actions"><a class="button primary" href="#compatibilidad">Check compatibility</a><a class="button ghost" href="#referencia">Quick reference</a></div>
-    <div class="badges"><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span><span>Up to 64 PARTs</span></div>
+    <p class="lead">A configurable system for animating face visibility on standard prims, linked objects and mesh in Second Life.</p>
+    <div class="hero-actions"><a class="button primary" href="#compatibilidad">How it works</a><a class="button ghost" href="#referencia">Quick reference</a></div>
+    <div class="badges"><span>Standard prims</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>Up to 64 PARTs</span></div>
   </div>
   <div class="hero-card">
-    <h3>Before you start</h3>
+    <h3>Two ways to use it</h3>
     <ul class="check-list">
-      <li>The mesh must be specifically prepared for this system.</li>
-      <li>Each visual state must use a different texture face.</li>
-      <li>Maximum 8 texture faces per mesh prim.</li>
-      <li>PBR faces are not supported by the current visibility method.</li>
+      <li>Standard prims: animate their existing faces directly.</li>
+      <li>Mesh: animate existing texture faces directly.</li>
+      <li>Advanced mesh: each face can represent a different pre-built geometry state.</li>
+      <li>Face Animator does not deform geometry; it controls visibility.</li>
     </ul>
   </div>
 </section>
 
 <section id="compatibilidad" class="doc-section searchable">
-  <div class="section-heading"><span class="step">01</span><div><h2>Is my mesh compatible?</h2><p>Check this before installing the script.</p></div></div>
-  <div class="callout danger"><strong>Face Animator does not animate arbitrary meshes.</strong><p>The object must already contain multiple geometry states inside the same mesh prim, assigned to separate materials / texture faces.</p></div>
+  <div class="section-heading"><span class="step">01</span><div><h2>What objects can it animate?</h2><p>Face Animator works with the numbered faces of Second Life prims.</p></div></div>
+  <div class="callout info"><strong>It is not limited to mesh.</strong><p>Standard prims can use their normal existing faces directly as animation states. This was verified in Second Life with three linked standard box prims.</p></div>
   <div class="two-col">
-    <div><h3>Compatible</h3><ul><li>Clothing, accessories or effects created specifically with separate states.</li><li>2 to 8 configured FACES per PART.</li><li>Legacy / Blinn-Phong faces for alpha visibility.</li><li>Linked prims with unique names.</li></ul></div>
-    <div><h3>Not compatible</h3><ul><li>A normal mesh with one geometry expecting the script to deform it.</li><li>Bone, rigged or Blender keyframe animation.</li><li>PBR faces that are expected to disappear through this system.</li><li>Two configured prims with the same name.</li></ul></div>
+    <div><h3>Direct use</h3><ul><li>Boxes, cylinders, prisms and other standard prims.</li><li>Multiple linked standard prims.</li><li>Mesh whose existing texture faces are the states you want to alternate.</li><li>Mixed linksets containing standard prims and mesh.</li></ul></div>
+    <div><h3>Specially prepared mesh</h3><p>Only required when different pre-built geometry shapes must act as animation frames. Each shape must belong to a separate material / texture face.</p></div>
   </div>
-  <p>Second Life supports up to <strong>8 texture faces per mesh prim</strong>. This limit applies to each individual prim, not the whole linkset.</p>
+  <div class="callout warning"><strong>What it does not do</strong><p>Face Animator does not move vertices or deform objects. It shows and hides the configured FACES.</p></div>
+  <p>The current version controls legacy / Blinn-Phong alpha. Faces using PBR materials are not supported by this visibility method.</p>
 </section>
 
 <section id="instalacion" class="doc-section searchable">
@@ -173,12 +174,18 @@ DELAYS=400,300,200,300,400</code></pre>
 </section>
 
 <section id="mesh" class="doc-section searchable">
-  <div class="section-heading"><span class="step">09</span><div><h2>How the mesh must be prepared</h2><p>The animated geometry is created before it reaches Second Life.</p></div></div>
+  <div class="section-heading"><span class="step">09</span><div><h2>Standard prims and advanced mesh</h2><p>The same engine supports simple face effects and apparent geometry animation.</p></div></div>
+  <h3>Standard prims</h3>
+  <p>No Blender preparation is required. Use their existing numbered faces directly in FACES.</p>
+  <h3>Regular mesh</h3>
+  <p>Existing texture faces can be used directly when those faces are the states you want to alternate.</p>
+  <h3>Mesh with geometry states</h3>
+  <p>If each face should represent a different shape, prepare the mesh in advance:</p>
   <pre><code>geometry state
 → mesh material
 → Second Life texture face
 → number used in FACES</code></pre>
-  <ul><li>Each visual position that must appear/disappear needs its own material / texture face.</li><li>Static geometry should use a separate face and remain outside FACES.</li><li>Do not assume final face numbers after upload: verify them inside Second Life.</li></ul>
+  <p>Face Animator does not create those shapes. It only switches their visibility.</p>
 </section>
 
 <section id="problemas" class="doc-section searchable">
@@ -214,6 +221,6 @@ REPEAT_DELAY=300</code></pre>
       <footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Public Face Animator documentation. Product source code is not published in this manual.</span></footer>
     </main>
   </div>
-  <script src="./app.js?v=face-animator-20261009-2"></script>
+  <script src="./app.js?v=face-animator-20261009-3"></script>
 </body>
 </html>
