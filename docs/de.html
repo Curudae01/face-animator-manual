@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de" data-theme="light" data-language="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Benutzerhandbuch für Face Animator v1.6.2 für Second Life.">
+  <meta name="theme-color" content="#5745d8">
+  <title>Face Animator · Benutzerhandbuch</title>
+  <link rel="stylesheet" href="./styles.css?v=face-animator-20261009-1">
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-button mobile-only" id="menuButton" aria-label="Menu">☰</button>
+  <a class="brand" href="#inicio" aria-label="Face Animator"><span class="brand-mark">FA</span><span><strong>Face Animator</strong><small>Benutzerhandbuch · Second Life</small></span></a>
+  <div class="top-actions">
+    <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Handbuch durchsuchen…" aria-label="Handbuch durchsuchen…"></label>
+    <div class="language-dropdown" id="languageDropdown">
+      <button class="language-button" id="languageButton" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false"><span id="currentLanguageFlag" aria-hidden="true">🇩🇪</span><span class="language-code" id="currentLanguageCode">DE</span><span class="language-chevron" aria-hidden="true">⌄</span></button>
+      <div class="language-menu" id="languageMenu" role="menu"><a href="./" data-lang="es" role="menuitem"><span aria-hidden="true">🇪🇸</span><span>ES</span></a>
+<a href="./en.html" data-lang="en" role="menuitem"><span aria-hidden="true">🇬🇧</span><span>EN</span></a>
+<a href="./pt.html" data-lang="pt" role="menuitem"><span aria-hidden="true">🇵🇹</span><span>PT</span></a>
+<a href="./de.html" data-lang="de" role="menuitem"><span aria-hidden="true">🇩🇪</span><span>DE</span></a>
+<a href="./fr.html" data-lang="fr" role="menuitem"><span aria-hidden="true">🇫🇷</span><span>FR</span></a>
+<a href="./ja.html" data-lang="ja" role="menuitem"><span aria-hidden="true">🇯🇵</span><span>日本語</span></a></div>
+    </div>
+    <button class="icon-button" id="themeButton" aria-label="Theme">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><nav><a href="#inicio">Start</a><a href="#compatibilidade">Kompatibilität</a><a href="#instalacion">Installation</a><div class="nav-group">Konfiguration</div><a href="#config">Config Face Animator</a><a href="#modos">MODE</a><a href="#faces">FACES und START</a><a href="#delays">DELAYS</a><a href="#repeat">REPEAT</a><div class="nav-group">Erweiterte Nutzung</div><a href="#varias-partes">Mehrere PARTs</a><a href="#mesh">Mesh vorbereiten</a><div class="nav-group">Hilfe</div><a href="#problemas">Fehlerbehebung</a><a href="#referencia">Kurzreferenz</a></nav><div class="sidebar-footer"><span class="pill">Manual v1.0</span><span class="muted">Face Animator v1.6.2</span></div></aside>
+  <main class="content" id="content">
+<section id="inicio" class="hero searchable"><div class="hero-copy"><span class="eyebrow">Second Life · offizielle Produktdokumentation</span><h1>Face Animator</h1><p class="lead">Visuelle Animation für speziell vorbereitete Meshes mit mehreren Geometriezuständen auf getrennten Texture Faces.</p><div class="hero-actions"><a class="button primary" href="#compatibilidade">Kompatibilität prüfen</a><a class="button ghost" href="#referencia">Kurzreferenz</a></div><div class="badges"><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span><span>Bis zu 64 PARTs</span></div></div><div class="hero-card"><h3>Vor dem Start</h3><ul class="check-list"><li>Das Mesh muss speziell für dieses System vorbereitet sein.</li><li>Jeder visuelle Zustand benötigt eine eigene Texture Face.</li><li>Maximal 8 Texture Faces pro Mesh-Prim.</li><li>PBR-Flächen werden von der aktuellen Sichtbarkeitsmethode nicht unterstützt.</li></ul></div></section>
+<section id="compatibilidade" class="doc-section searchable"><div class="section-heading"><span class="step">01</span><div><h2>Ist mein Mesh kompatibel?</h2><p>Vor der Installation prüfen.</p></div></div><div class="callout danger"><strong>Face Animator animiert keine beliebigen Meshes.</strong><p>Das Objekt muss bereits mehrere Geometriezustände im selben Mesh-Prim enthalten, die getrennten Materialien / Texture Faces zugewiesen sind.</p></div><div class="two-col"><div><h3>Kompatibel</h3><ul><li>Kleidung, Zubehör oder Effekte mit getrennten Zuständen.</li><li>2 bis 8 konfigurierte FACES pro PART.</li><li>Legacy-/Blinn-Phong-Flächen für Alpha-Sichtbarkeit.</li><li>Verlinkte Prims mit eindeutigen Namen.</li></ul></div><div><h3>Nicht kompatibel</h3><ul><li>Normales Mesh mit nur einer Geometrie, die vom Script verformt werden soll.</li><li>Knochen-, Rigging- oder Blender-Keyframe-Animation.</li><li>PBR-Flächen, die mit diesem Verfahren ausgeblendet werden sollen.</li><li>Zwei konfigurierte Prims mit demselben Namen.</li></ul></div></div><p>Second Life unterstützt bis zu <strong>8 Texture Faces pro Mesh-Prim</strong>. Das Limit gilt pro Prim, nicht für das gesamte Linkset.</p></section>
+<section id="instalacion" class="doc-section searchable"><div class="section-heading"><span class="step">02</span><div><h2>Installation</h2><p>Script und Notecard zusammen aufbewahren.</p></div></div><ol><li>Kompatibles Objekt rezzen oder bearbeiten.</li><li>Den Prim öffnen, in dem Face Animator installiert wird. Empfohlen ist der <strong>Root-Prim</strong>.</li><li>Das mitgelieferte Script und die Notecard mit dem exakten Namen <code>Config Face Animator</code> in dasselbe Prim-Inventar legen.</li><li>Notecard mit den tatsächlichen Namen der verlinkten Prims bearbeiten.</li><li>Speichern und warten, bis das Laden abgeschlossen ist.</li><li>Im Besitzer-Chat prüfen, ob die Konfiguration akzeptiert wurde.</li></ol><div class="callout warning"><strong>Dasselbe Prim-Inventar</strong><p><code>Config Face Animator</code> muss sich im Inventar desselben Prims wie das Script befinden.</p></div></section>
+<section id="config" class="doc-section searchable"><div class="section-heading"><span class="step">03</span><div><h2>Config Face Animator</h2><p>Blockweise Konfiguration, PART für PART.</p></div></div><p>Zeilen mit <code>#</code> sind Kommentare, leere Zeilen werden ignoriert.</p><pre><code>PART=COINS
+MODE=PENDULUM
+FACES=0,1,2,3,4
+START=0
+DELAYS=400,300,200,300,400
+REPEAT=2
+REPEAT_DELAY=300</code></pre><p>Für einen weiteren animierten Prim einen neuen Block mit <code>PART=...</code> beginnen.</p><div class="callout info"><strong>Große Notecards</strong><p>Das Script liest bis EOF. Der reale Stresstest las 510 Zeilen und speicherte 64 PARTs korrekt. Große Konfigurationen brauchen merklich länger.</p></div></section>
+<section id="modos" class="doc-section searchable"><div class="section-heading"><span class="step">04</span><div><h2>MODE</h2><p>Bewegungsmuster für jede PART.</p></div></div><div class="cards three"><article><h3>PENDULUM</h3><pre><code>MODE=PENDULUM</code></pre><p>Bis zum Ende und wieder zurück.</p><code>0 → 1 → 2 → 3 → 4 → 3 → 2 → 1 → 0</code></article><article><h3>LINEAR</h3><pre><code>MODE=LINEAR</code></pre><p>Bis zum letzten Zustand, dann direkt zum ersten.</p><code>0 → 1 → 2 → 3 → 4 → 0</code></article><article><h3>RANDOM</h3><pre><code>MODE=RANDOM</code></pre><p>Zufällige Sprünge zwischen den konfigurierten FACES ohne sofortige Wiederholung.</p></article></div></section>
+<section id="faces" class="doc-section searchable"><div class="section-heading"><span class="step">05</span><div><h2>FACES und START</h2><p>Legt die Animationsflächen fest.</p></div></div><pre><code>FACES=0,1,2,3,4
+START=2</code></pre><ul><li>FACES akzeptiert <strong>2 bis 8</strong> Indizes.</li><li>Sie müssen nicht fortlaufend sein.</li><li>START muss in FACES enthalten sein.</li><li>Flächen außerhalb von FACES werden absichtlich nicht verändert.</li></ul><div class="callout warning"><strong>Bei Änderungen</strong><p>Wurde eine Fläche durch eine frühere Konfiguration ausgeblendet und später aus FACES entfernt, Alpha manuell wiederherstellen oder mit einer sauberen Kopie testen.</p></div></section>
+<section id="delays" class="doc-section searchable"><div class="section-heading"><span class="step">06</span><div><h2>DELAYS</h2><p>Sichtbare Dauer jedes Zustands in Millisekunden.</p></div></div><pre><code>FACES=0,1,2,3,4
+DELAYS=400,300,200,300,400</code></pre><p>Jeder Wert gehört zur FACE an derselben Position. Bereich: <strong>100..60000 ms</strong>. FACES und DELAYS müssen gleich viele Werte enthalten.</p></section>
+<section id="repeat" class="doc-section searchable"><div class="section-heading"><span class="step">07</span><div><h2>REPEAT und REPEAT_DELAY</h2><p>Optionale Steuerung vollständiger Zyklen pro PART.</p></div></div><table><thead><tr><th>Einstellung</th><th>Ergebnis</th></tr></thead><tbody><tr><td>REPEAT fehlt</td><td>Traditionelle Daueranimation.</td></tr><tr><td><code>REPEAT=</code></td><td>Daueranimation; REPEAT_DELAY wird ignoriert.</td></tr><tr><td><code>REPEAT=2</code></td><td>Zwei vollständige Zyklen, dann Stopp auf START.</td></tr><tr><td><code>REPEAT=INFINITE</code></td><td>Unendlich viele kontrollierte Zyklen.</td></tr></tbody></table><pre><code>REPEAT=3
+REPEAT_DELAY=2000</code></pre><p>REPEAT_DELAY gilt nur bei aktivem REPEAT. Fehlend, leer oder 0 verwendet den normalen START-DELAYS-Wert zwischen Zyklen. REPEAT: <strong>1..1000000</strong>. REPEAT_DELAY: <strong>0..86400000 ms</strong>.</p></section>
+<section id="varias-partes" class="doc-section searchable"><div class="section-heading"><span class="step">08</span><div><h2>Mehrere PARTs und Kapazität</h2><p>Jeder verlinkte Prim kann eigene Einstellungen haben.</p></div></div><pre><code>PART=SKIRT_LEFT
+MODE=LINEAR
+FACES=0,1,2,3,4
+START=0
+DELAYS=200,150,100,150,200
+
+PART=SKIRT_RIGHT
+MODE=RANDOM
+FACES=0,1,2,3,4
+START=2
+DELAYS=400,300,200,300,400</code></pre><div class="stats"><div><strong>64</strong><span>maximale logische PARTs</span></div><div><strong>8</strong><span>maximale FACES pro PART</span></div></div><div class="callout info"><strong>Getestete Kapazität</strong><p>v1.6.2 wurde mit <strong>64 PARTs × 5 FACES = 320 Frames</strong> getestet. 64 × 8 = 512 Frames wurde nicht getestet und wird nicht garantiert. Die reale Kapazität hängt auch vom verfügbaren Speicher ab.</p></div></section>
+<section id="mesh" class="doc-section searchable"><div class="section-heading"><span class="step">09</span><div><h2>Mesh vorbereiten</h2><p>Die animierte Geometrie wird vor Second Life erstellt.</p></div></div><pre><code>Geometriezustand
+→ Mesh-Material
+→ Second-Life-Texture-Face
+→ Nummer in FACES</code></pre><ul><li>Jede sichtbare Position benötigt ein eigenes Material / Texture Face.</li><li>Statische Geometrie sollte separat und außerhalb von FACES liegen.</li><li>Face-Nummern nach dem Upload in Second Life prüfen.</li></ul></section>
+<section id="problemas" class="doc-section searchable"><div class="section-heading"><span class="step">10</span><div><h2>Fehlerbehebung</h2><p>Schnelle Prüfungen vor Script-Änderungen.</p></div></div><details><summary>Nichts animiert</summary><p>Mesh-Aufbau, exakten PART-Namen und gültige FACES prüfen.</p></details><details><summary>PBR-Fläche verschwindet nicht</summary><p>Die aktuelle Methode verwendet Blinn-Phong-Alpha; PBR-Flächen reagieren darauf nicht sichtbar.</p></details><details><summary>PART existiert nicht</summary><p>Den exakten Namen aus dem Startscan verwenden.</p></details><details><summary>Konfiguration lädt lange</summary><p>Notecards werden zeilenweise gelesen. Auf EOF/valid configuration warten.</p></details><details><summary>Speicherfehler</summary><p>Gesamtzahl von PARTs oder FACES reduzieren.</p></details></section>
+<section id="referencia" class="doc-section searchable"><div class="section-heading"><span class="step">11</span><div><h2>Kurzreferenz</h2><p>Vollständiger PART-Block.</p></div></div><pre><code>PART=Exact prim name
+MODE=PENDULUM | LINEAR | RANDOM
+FACES=0,1,2,3,4
+START=0
+DELAYS=400,300,200,300,400
+REPEAT=2
+REPEAT_DELAY=300</code></pre><table><thead><tr><th>Feld</th><th>Regel</th></tr></thead><tbody><tr><td>PART</td><td>Exakter eindeutiger Prim-Name.</td></tr><tr><td>MODE</td><td>PENDULUM, LINEAR oder RANDOM.</td></tr><tr><td>FACES</td><td>2..8 animierte Indizes.</td></tr><tr><td>START</td><td>Muss in FACES stehen.</td></tr><tr><td>DELAYS</td><td>Ein Wert pro FACE, 100..60000 ms.</td></tr><tr><td>REPEAT</td><td>Optional: leer, 1..1000000 oder INFINITE.</td></tr><tr><td>REPEAT_DELAY</td><td>Optional: 0..86400000 ms; bei deaktiviertem REPEAT ignoriert.</td></tr></tbody></table></section><div id="noResults" class="no-results" hidden><h2>Keine Treffer</h2></div><footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Öffentliche Face-Animator-Dokumentation. Der Produkt-Quellcode wird in diesem Handbuch nicht veröffentlicht.</span></footer></main>
+</div>
+<script src="./app.js?v=face-animator-20261009-1"></script>
+</body></html>
