@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="User manual for Face Animator v1.6.2 for Second Life.">
-  <meta name="theme-color" content="#5745d8">
-  <title>Face Animator · User Manual</title>
-  <link rel="stylesheet" href="./styles.css?v=face-animator-20261009-1">
+  <meta name="description" content="Official Face Animator user manual for Second Life, published by Sonja Creations.">
+  <meta name="theme-color" content="#18283D">
+  <title>Face Animator · Sonja Creations</title>
+  <link rel="icon" type="image/png" href="./assets/brand/icono2.png">
+  <link rel="apple-touch-icon" href="./assets/brand/icono2.png">
+  <link rel="stylesheet" href="./styles.css?v=sonja-creations-20261009-1">
 </head>
 <body>
   <header class="topbar">
     <button class="icon-button mobile-only" id="menuButton" aria-label="Menu">☰</button>
-    <a class="brand" href="#inicio" aria-label="Face Animator">
-      <span class="brand-mark">FA</span>
-      <span><strong>Face Animator</strong><small>User manual · Second Life</small></span>
+    <a class="brand brand-sonja" href="#inicio" aria-label="Face Animator by Sonja Creations">
+      <img class="brand-icon" src="./assets/brand/icono2.png" alt="" width="40" height="40">
+      <span><strong>Face Animator</strong><small>Official manual · Sonja Creations</small></span>
     </a>
     <div class="top-actions">
       <label class="search">
@@ -40,6 +42,10 @@
   </header>
   <div class="layout">
     <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="./assets/brand/icono2.png" alt="" width="46" height="46">
+        <div><strong>Sonja Creations</strong><small>Code. Create. Imagine.</small></div>
+      </div>
       <nav>
 <a href="#inicio">Home</a>
 <a href="#compatibilidad">Compatibility</a>
@@ -52,7 +58,7 @@
 <a href="#repeat">REPEAT</a>
 <div class="nav-group">Advanced use</div>
 <a href="#varias-partes">Multiple PARTs</a>
-<a href="#mesh">Preparing the mesh</a>
+<a href="#mesh">Prims and mesh</a>
 <div class="nav-group">Help</div>
 <a href="#problemas">Troubleshooting</a>
 <a href="#referencia">Quick reference</a></nav>
@@ -60,21 +66,22 @@
     </aside>
     <main class="content" id="content">
       
-<section id="inicio" class="hero searchable">
+<section id="inicio" class="hero hero-sonja searchable">
   <div class="hero-copy">
-    <span class="eyebrow">Second Life · official product documentation</span>
+    <div class="sonja-kicker"><img src="./assets/brand/icono2.png" alt="" width="24" height="24"><span>SONJA CREATIONS · OFFICIAL PRODUCT DOCUMENTATION</span></div>
     <h1>Face Animator</h1>
-    <p class="lead">A configurable system for animating face visibility on standard prims, linked objects and mesh in Second Life.</p>
+    <p class="lead">Animate face visibility on standard prims, linked objects and mesh directly inside Second Life.</p>
     <div class="hero-actions"><a class="button primary" href="#compatibilidad">How it works</a><a class="button ghost" href="#referencia">Quick reference</a></div>
-    <div class="badges"><span>Standard prims</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>Up to 64 PARTs</span></div>
+    <div class="badges"><span>STANDARD PRIMS</span><span>MESH</span><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span></div>
   </div>
-  <div class="hero-card">
-    <h3>Two ways to use it</h3>
+  <div class="hero-card sonja-hero-card">
+    <div class="hero-brand-icon"><img src="./assets/brand/icono2.png" alt="Sonja Creations"></div>
+    <h3>One system. Multiple uses.</h3>
     <ul class="check-list">
-      <li>Standard prims: animate their existing faces directly.</li>
-      <li>Mesh: animate existing texture faces directly.</li>
-      <li>Advanced mesh: each face can represent a different pre-built geometry state.</li>
-      <li>Face Animator does not deform geometry; it controls visibility.</li>
+      <li>Animate existing faces on standard prims.</li>
+      <li>Control multiple linked parts independently.</li>
+      <li>Animate existing mesh texture faces.</li>
+      <li>Use prepared mesh states for apparent geometry animation.</li>
     </ul>
   </div>
 </section>
@@ -218,7 +225,11 @@ REPEAT_DELAY=300</code></pre>
   </tbody></table>
 </section>
       <div id="noResults" class="no-results" hidden><h2>No matches found</h2></div>
-      <footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Public Face Animator documentation. Product source code is not published in this manual.</span></footer>
+      <footer class="site-footer sonja-footer">
+        <div class="footer-brand"><img src="./assets/brand/icono2.png" alt="" width="34" height="34"><div><strong>Sonja Creations</strong><span>Code. Create. Imagine.</span></div></div>
+        <div class="footer-product"><strong>Face Animator v1.6.2</strong><span>Official Product Documentation</span></div>
+        <div class="footer-copy">© 2026 Sonja Creations. All rights reserved.</div>
+      </footer>
     </main>
   </div>
   <script src="./app.js?v=face-animator-20261009-3"></script>
