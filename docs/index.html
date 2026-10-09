@@ -64,29 +64,30 @@
   <div class="hero-copy">
     <span class="eyebrow">Second Life · documentación oficial del producto</span>
     <h1>Face Animator</h1>
-    <p class="lead">Animación visual para meshes preparados con varios estados geométricos distribuidos entre texture faces.</p>
-    <div class="hero-actions"><a class="button primary" href="#compatibilidad">Comprobar compatibilidad</a><a class="button ghost" href="#referencia">Referencia rápida</a></div>
-    <div class="badges"><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span><span>Hasta 64 PART</span></div>
+    <p class="lead">Un sistema configurable para animar la visibilidad de caras en prims normales, objetos enlazados y mesh de Second Life.</p>
+    <div class="hero-actions"><a class="button primary" href="#compatibilidad">Cómo funciona</a><a class="button ghost" href="#referencia">Referencia rápida</a></div>
+    <div class="badges"><span>Prims estándar</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>Hasta 64 PART</span></div>
   </div>
   <div class="hero-card">
-    <h3>Antes de empezar</h3>
+    <h3>Dos formas de usarlo</h3>
     <ul class="check-list">
-      <li>El mesh debe estar preparado específicamente para este sistema.</li>
-      <li>Cada estado visual debe ocupar una texture face distinta.</li>
-      <li>Máximo 8 texture faces por prim mesh.</li>
-      <li>Las caras PBR no funcionan con el método actual de visibilidad.</li>
+      <li>Prims normales: anima directamente sus caras existentes.</li>
+      <li>Mesh: anima directamente sus texture faces existentes.</li>
+      <li>Mesh avanzado: cada face puede representar una geometría preconstruida diferente.</li>
+      <li>Face Animator no deforma geometría; controla visibilidad.</li>
     </ul>
   </div>
 </section>
 
 <section id="compatibilidad" class="doc-section searchable">
-  <div class="section-heading"><span class="step">01</span><div><h2>¿Es compatible mi mesh?</h2><p>Esta comprobación es obligatoria antes de instalar el script.</p></div></div>
-  <div class="callout danger"><strong>Face Animator no anima cualquier mesh.</strong><p>El objeto debe haberse creado con varios estados geométricos ya presentes dentro del mismo prim mesh y asignados a materiales / texture faces separados.</p></div>
+  <div class="section-heading"><span class="step">01</span><div><h2>¿Qué objetos puede animar?</h2><p>Face Animator trabaja con las caras numeradas de los prims de Second Life.</p></div></div>
+  <div class="callout info"><strong>No está limitado a mesh.</strong><p>Los prims estándar pueden utilizar directamente sus caras normales como estados de animación. Esta capacidad fue probada en Second Life con tres cajas normales enlazadas.</p></div>
   <div class="two-col">
-    <div><h3>Compatible</h3><ul><li>Ropa, accesorios o efectos creados expresamente con estados separados.</li><li>Entre 2 y 8 FACES configuradas por PART.</li><li>Caras legacy / Blinn-Phong para la visibilidad por alpha.</li><li>Prims enlazados con nombres únicos.</li></ul></div>
-    <div><h3>No compatible</h3><ul><li>Un mesh normal con una sola geometría esperando que el script la deforme.</li><li>Animación por huesos, rigging o keyframes de Blender.</li><li>Caras PBR si se espera que desaparezcan con este sistema.</li><li>Dos prims configurados con el mismo nombre.</li></ul></div>
+    <div><h3>Uso directo</h3><ul><li>Cajas, cilindros, prismas y otros prims estándar.</li><li>Varios prims normales enlazados.</li><li>Mesh que ya tenga las texture faces que quieres alternar.</li><li>Combinaciones de prims estándar y mesh.</li></ul></div>
+    <div><h3>Mesh preparado especialmente</h3><p>Solo es necesario cuando quieres que distintas formas geométricas preconstruidas actúen como frames. Cada forma debe pertenecer a un material / texture face separado.</p></div>
   </div>
-  <p>Second Life admite hasta <strong>8 texture faces por prim mesh</strong>. Ese límite se aplica a cada prim individual, no al linkset completo.</p>
+  <div class="callout warning"><strong>Qué no hace</strong><p>Face Animator no mueve vértices ni deforma objetos. Muestra y oculta las FACES configuradas.</p></div>
+  <p>La versión actual controla alpha legacy / Blinn-Phong. Las caras con material PBR no son compatibles con este mecanismo de visibilidad.</p>
 </section>
 
 <section id="instalacion" class="doc-section searchable">
@@ -173,13 +174,18 @@ DELAYS=400,300,200,300,400</code></pre>
 </section>
 
 <section id="mesh" class="doc-section searchable">
-  <div class="section-heading"><span class="step">09</span><div><h2>Cómo debe prepararse el mesh</h2><p>La geometría animada se crea antes de llegar a Second Life.</p></div></div>
-  <p>Modelo mental:</p>
+  <div class="section-heading"><span class="step">09</span><div><h2>Prims normales y mesh avanzado</h2><p>El mismo motor sirve para usos simples y para pseudoanimación geométrica.</p></div></div>
+  <h3>Prims estándar</h3>
+  <p>No necesitan Blender ni preparación especial. Utiliza sus caras existentes directamente en FACES.</p>
+  <h3>Mesh normal</h3>
+  <p>Puede utilizar directamente sus texture faces existentes si esas caras son los estados que quieres alternar.</p>
+  <h3>Mesh con estados geométricos</h3>
+  <p>Si quieres que cada face represente una forma distinta, prepara previamente el mesh:</p>
   <pre><code>estado geométrico
 → material del mesh
 → texture face de Second Life
 → número utilizado en FACES</code></pre>
-  <ul><li>Cada posición visual que deba aparecer/desaparecer necesita su propio material / texture face.</li><li>La geometría estática debe quedar en una cara separada y fuera de FACES.</li><li>No presupongas el número final de las faces después del upload: compruébalo dentro de Second Life.</li></ul>
+  <p>Face Animator no crea esas formas. Solo alterna su visibilidad.</p>
 </section>
 
 <section id="problemas" class="doc-section searchable">
@@ -215,6 +221,6 @@ REPEAT_DELAY=300</code></pre>
       <footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Documentación pública de Face Animator. El código fuente del producto no se publica en este manual.</span></footer>
     </main>
   </div>
-  <script src="./app.js?v=face-animator-20261009-2"></script>
+  <script src="./app.js?v=face-animator-20261009-3"></script>
 </body>
 </html>
