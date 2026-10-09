@@ -15,13 +15,15 @@
   <div class="top-actions">
     <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Handbuch durchsuchen…" aria-label="Handbuch durchsuchen…"></label>
     <div class="language-dropdown" id="languageDropdown">
-      <button class="language-button" id="languageButton" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false"><span id="currentLanguageFlag" aria-hidden="true">🇩🇪</span><span class="language-code" id="currentLanguageCode">DE</span><span class="language-chevron" aria-hidden="true">⌄</span></button>
-      <div class="language-menu" id="languageMenu" role="menu"><a href="./" data-lang="es" role="menuitem"><span aria-hidden="true">🇪🇸</span><span>ES</span></a>
-<a href="./en.html" data-lang="en" role="menuitem"><span aria-hidden="true">🇬🇧</span><span>EN</span></a>
-<a href="./pt.html" data-lang="pt" role="menuitem"><span aria-hidden="true">🇵🇹</span><span>PT</span></a>
-<a href="./de.html" data-lang="de" role="menuitem"><span aria-hidden="true">🇩🇪</span><span>DE</span></a>
-<a href="./fr.html" data-lang="fr" role="menuitem"><span aria-hidden="true">🇫🇷</span><span>FR</span></a>
-<a href="./ja.html" data-lang="ja" role="menuitem"><span aria-hidden="true">🇯🇵</span><span>日本語</span></a></div>
+      <button class="language-button" id="languageButton" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false"><img class="language-flag" width="22" height="14" id="currentLanguageFlag" src="./assets/flags/de.svg" alt=""><span class="language-code" id="currentLanguageCode">DE</span><span class="language-chevron" aria-hidden="true">⌄</span></button>
+      <div class="language-menu" id="languageMenu" role="menu">
+          <a href="./" data-lang="es" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/es.svg" alt=""><span>ES</span></a>
+          <a href="./en.html" data-lang="en" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/gb.svg" alt=""><span>EN</span></a>
+          <a href="./pt.html" data-lang="pt" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/pt.svg" alt=""><span>PT</span></a>
+          <a href="./de.html" data-lang="de" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/de.svg" alt=""><span>DE</span></a>
+          <a href="./fr.html" data-lang="fr" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/fr.svg" alt=""><span>FR</span></a>
+          <a href="./ja.html" data-lang="ja" role="menuitem"><img class="language-flag" width="22" height="14" src="./assets/flags/jp.svg" alt=""><span>日本語</span></a>
+        </div>
     </div>
     <button class="icon-button" id="themeButton" aria-label="Theme">◐</button>
   </div>
@@ -70,5 +72,5 @@ DELAYS=400,300,200,300,400
 REPEAT=2
 REPEAT_DELAY=300</code></pre><table><thead><tr><th>Feld</th><th>Regel</th></tr></thead><tbody><tr><td>PART</td><td>Exakter eindeutiger Prim-Name.</td></tr><tr><td>MODE</td><td>PENDULUM, LINEAR oder RANDOM.</td></tr><tr><td>FACES</td><td>2..8 animierte Indizes.</td></tr><tr><td>START</td><td>Muss in FACES stehen.</td></tr><tr><td>DELAYS</td><td>Ein Wert pro FACE, 100..60000 ms.</td></tr><tr><td>REPEAT</td><td>Optional: leer, 1..1000000 oder INFINITE.</td></tr><tr><td>REPEAT_DELAY</td><td>Optional: 0..86400000 ms; bei deaktiviertem REPEAT ignoriert.</td></tr></tbody></table></section><div id="noResults" class="no-results" hidden><h2>Keine Treffer</h2></div><footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Öffentliche Face-Animator-Dokumentation. Der Produkt-Quellcode wird in diesem Handbuch nicht veröffentlicht.</span></footer></main>
 </div>
-<script src="./app.js?v=face-animator-20261009-1"></script>
+<script src="./app.js?v=face-animator-20261009-2"></script>
 </body></html>
