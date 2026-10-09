@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Manual de usuario de Face Animator v1.6.2 para Second Life.">
-  <meta name="theme-color" content="#5745d8">
-  <title>Face Animator · Manual de usuario</title>
-  <link rel="stylesheet" href="./styles.css?v=face-animator-20261009-1">
+  <meta name="description" content="Manual oficial de Face Animator para Second Life, publicado por Sonja Creations.">
+  <meta name="theme-color" content="#18283D">
+  <title>Face Animator · Sonja Creations</title>
+  <link rel="icon" type="image/png" href="./assets/brand/icono2.png">
+  <link rel="apple-touch-icon" href="./assets/brand/icono2.png">
+  <link rel="stylesheet" href="./styles.css?v=sonja-creations-20261009-1">
 </head>
 <body>
   <header class="topbar">
     <button class="icon-button mobile-only" id="menuButton" aria-label="Menu">☰</button>
-    <a class="brand" href="#inicio" aria-label="Face Animator">
-      <span class="brand-mark">FA</span>
-      <span><strong>Face Animator</strong><small>Manual de usuario · Second Life</small></span>
+    <a class="brand brand-sonja" href="#inicio" aria-label="Face Animator by Sonja Creations">
+      <img class="brand-icon" src="./assets/brand/icono2.png" alt="" width="40" height="40">
+      <span><strong>Face Animator</strong><small>Manual oficial · Sonja Creations</small></span>
     </a>
     <div class="top-actions">
       <label class="search">
@@ -40,6 +42,10 @@
   </header>
   <div class="layout">
     <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="./assets/brand/icono2.png" alt="" width="46" height="46">
+        <div><strong>Sonja Creations</strong><small>Code. Create. Imagine.</small></div>
+      </div>
       <nav>
 <a href="#inicio">Inicio</a>
 <a href="#compatibilidad">Compatibilidad</a>
@@ -52,7 +58,7 @@
 <a href="#repeat">REPEAT</a>
 <div class="nav-group">Uso avanzado</div>
 <a href="#varias-partes">Varias PART</a>
-<a href="#mesh">Preparar el mesh</a>
+<a href="#mesh">Prims y mesh</a>
 <div class="nav-group">Ayuda</div>
 <a href="#problemas">Problemas frecuentes</a>
 <a href="#referencia">Referencia rápida</a></nav>
@@ -60,21 +66,22 @@
     </aside>
     <main class="content" id="content">
       
-<section id="inicio" class="hero searchable">
+<section id="inicio" class="hero hero-sonja searchable">
   <div class="hero-copy">
-    <span class="eyebrow">Second Life · documentación oficial del producto</span>
+    <div class="sonja-kicker"><img src="./assets/brand/icono2.png" alt="" width="24" height="24"><span>SONJA CREATIONS · DOCUMENTACIÓN OFICIAL DEL PRODUCTO</span></div>
     <h1>Face Animator</h1>
-    <p class="lead">Un sistema configurable para animar la visibilidad de caras en prims normales, objetos enlazados y mesh de Second Life.</p>
+    <p class="lead">Anima la visibilidad de caras en prims estándar, objetos enlazados y mesh directamente en Second Life.</p>
     <div class="hero-actions"><a class="button primary" href="#compatibilidad">Cómo funciona</a><a class="button ghost" href="#referencia">Referencia rápida</a></div>
-    <div class="badges"><span>Prims estándar</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>Hasta 64 PART</span></div>
+    <div class="badges"><span>STANDARD PRIMS</span><span>MESH</span><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span></div>
   </div>
-  <div class="hero-card">
-    <h3>Dos formas de usarlo</h3>
+  <div class="hero-card sonja-hero-card">
+    <div class="hero-brand-icon"><img src="./assets/brand/icono2.png" alt="Sonja Creations"></div>
+    <h3>Un sistema. Diferentes usos.</h3>
     <ul class="check-list">
-      <li>Prims normales: anima directamente sus caras existentes.</li>
-      <li>Mesh: anima directamente sus texture faces existentes.</li>
-      <li>Mesh avanzado: cada face puede representar una geometría preconstruida diferente.</li>
-      <li>Face Animator no deforma geometría; controla visibilidad.</li>
+      <li>Anima directamente las caras de prims estándar.</li>
+      <li>Controla varias partes enlazadas independientemente.</li>
+      <li>Anima las texture faces existentes de un mesh.</li>
+      <li>Permite pseudoanimación geométrica con meshes preparados.</li>
     </ul>
   </div>
 </section>
@@ -218,7 +225,11 @@ REPEAT_DELAY=300</code></pre>
   </tbody></table>
 </section>
       <div id="noResults" class="no-results" hidden><h2>No hay coincidencias</h2></div>
-      <footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Documentación pública de Face Animator. El código fuente del producto no se publica en este manual.</span></footer>
+      <footer class="site-footer sonja-footer">
+        <div class="footer-brand"><img src="./assets/brand/icono2.png" alt="" width="34" height="34"><div><strong>Sonja Creations</strong><span>Code. Create. Imagine.</span></div></div>
+        <div class="footer-product"><strong>Face Animator v1.6.2</strong><span>Documentación oficial del producto</span></div>
+        <div class="footer-copy">© 2026 Sonja Creations. All rights reserved.</div>
+      </footer>
     </main>
   </div>
   <script src="./app.js?v=face-animator-20261009-3"></script>
