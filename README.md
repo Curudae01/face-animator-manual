@@ -28,9 +28,12 @@ Los nombres técnicos del producto permanecen en inglés en todos los idiomas:
 ## Alcance documentado
 
 - Face Animator v1.6.2.
+- Funciona con caras de prims estándar y objetos mesh.
+- La preparación especial del mesh solo es necesaria cuando distintas geometrías preconstruidas deben actuar como estados visuales.
 - Hasta 64 PART configuradas, sujeto a memoria disponible.
 - Máximo 8 FACES por PART.
 - Prueba real: 64 PART × 5 FACES = 320 frames.
+- Prueba adicional: tres cajas estándar enlazadas animaron correctamente sus caras normales.
 - Configuración de estrés: 510 líneas leídas completamente hasta EOF.
 - La combinación 64 PART × 8 FACES no ha sido probada y no se garantiza.
 - El método actual de visibilidad usa alpha Blinn-Phong; caras PBR no son compatibles con este mecanismo.
