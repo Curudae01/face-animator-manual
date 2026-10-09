@@ -31,8 +31,23 @@
 <div class="layout">
   <aside class="sidebar" id="sidebar"><nav><a href="#inicio">ホーム</a><a href="#compatibilidade">互換性</a><a href="#instalacion">インストール</a><div class="nav-group">設定</div><a href="#config">Config Face Animator</a><a href="#modos">MODE</a><a href="#faces">FACES と START</a><a href="#delays">DELAYS</a><a href="#repeat">REPEAT</a><div class="nav-group">高度な使用</div><a href="#varias-partes">複数 PART</a><a href="#mesh">Mesh の準備</a><div class="nav-group">ヘルプ</div><a href="#problemas">トラブルシューティング</a><a href="#referencia">クイックリファレンス</a></nav><div class="sidebar-footer"><span class="pill">Manual v1.0</span><span class="muted">Face Animator v1.6.2</span></div></aside>
   <main class="content" id="content">
-<section id="inicio" class="hero searchable"><div class="hero-copy"><span class="eyebrow">Second Life · 公式製品ドキュメント</span><h1>Face Animator</h1><p class="lead">複数の形状状態を別々の texture face に持つ、専用に準備された mesh のための視覚アニメーションシステムです。</p><div class="hero-actions"><a class="button primary" href="#compatibilidade">互換性を確認</a><a class="button ghost" href="#referencia">クイックリファレンス</a></div><div class="badges"><span>PENDULUM</span><span>LINEAR</span><span>RANDOM</span><span>最大 64 PART</span></div></div><div class="hero-card"><h3>開始前の確認</h3><ul class="check-list"><li>Mesh はこの方式専用に準備されている必要があります。</li><li>各表示状態は異なる texture face を使う必要があります。</li><li>1 mesh prim あたり最大 8 texture faces。</li><li>現在の表示方式では PBR face は非対応です。</li></ul></div></section>
-<section id="compatibilidade" class="doc-section searchable"><div class="section-heading"><span class="step">01</span><div><h2>この mesh は対応していますか？</h2><p>スクリプトを入れる前に確認してください。</p></div></div><div class="callout danger"><strong>Face Animator は任意の mesh を自動変形させるものではありません。</strong><p>同じ mesh prim 内に複数の形状状態があらかじめ存在し、それぞれが別の material / texture face に割り当てられている必要があります。</p></div><div class="two-col"><div><h3>対応</h3><ul><li>複数状態を分けて作成した衣服、アクセサリ、エフェクト。</li><li>1 PART あたり 2～8 個の FACES。</li><li>Alpha 表示に legacy / Blinn-Phong face を使用。</li><li>リンク prim 名が重複していない。</li></ul></div><div><h3>非対応</h3><ul><li>単一形状の通常 mesh をスクリプトで変形させたい場合。</li><li>Bone、rigging、Blender keyframe アニメーション。</li><li>この方法で消したい PBR face。</li><li>同じ名前を持つ 2 つの設定対象 prim。</li></ul></div></div><p>Second Life では <strong>1 mesh prim あたり最大 8 texture faces</strong> が利用できます。この制限は linkset 全体ではなく各 prim に適用されます。</p></section>
+<section id="inicio" class="hero searchable">
+  <div class="hero-copy">
+    <span class="eyebrow">Second Life · 公式製品ドキュメント</span>
+    <h1>Face Animator</h1>
+    <p class="lead">標準 prim、リンクオブジェクト、mesh の個別 face の表示を切り替えてアニメーションさせる設定可能なシステムです。</p>
+    <div class="hero-actions"><a class="button primary" href="#compatibilidade">仕組み</a><a class="button ghost" href="#referencia">クイックリファレンス</a></div>
+    <div class="badges"><span>標準 prim</span><span>Mesh</span><span>PENDULUM · LINEAR · RANDOM</span><span>最大 64 PART</span></div>
+  </div>
+  <div class="hero-card"><h3>2つの使い方</h3><ul class="check-list"><li>標準 prim: 既存の face をそのままアニメーション。</li><li>Mesh: 既存の texture face をそのままアニメーション。</li><li>高度な mesh: 各 face を異なる事前作成 geometry state として使用。</li><li>Face Animator は geometry を変形せず、表示状態を制御します。</li></ul></div>
+</section>
+<section id="compatibilidade" class="doc-section searchable">
+  <div class="section-heading"><span class="step">01</span><div><h2>どのオブジェクトをアニメーションできますか？</h2><p>Face Animator は Second Life prim の番号付き face を使用します。</p></div></div>
+  <div class="callout info"><strong>Mesh 専用ではありません。</strong><p>標準 prim は既存の通常 face をそのまま animation state として使用できます。Second Life 内で3つの標準 box prim をリンクしたオブジェクトで動作確認済みです。</p></div>
+  <div class="two-col"><div><h3>そのまま使用可能</h3><ul><li>Box、Cylinder、Prism などの標準 prim。</li><li>複数のリンクされた標準 prim。</li><li>既存 texture face を状態として使う mesh。</li><li>標準 prim と mesh の混合 linkset。</li></ul></div><div><h3>特別に準備した mesh</h3><p>異なる事前作成 geometry shape を frame として使う場合のみ必要です。各 shape を別の material / texture face に割り当てます。</p></div></div>
+  <div class="callout warning"><strong>できないこと</strong><p>Face Animator は vertex を移動したり object を変形したりしません。設定された FACES の表示/非表示を切り替えます。</p></div>
+  <p>現在のバージョンは legacy / Blinn-Phong alpha を制御します。PBR material face はこの表示方式ではサポートされません。</p>
+</section>
 <section id="instalacion" class="doc-section searchable"><div class="section-heading"><span class="step">02</span><div><h2>インストール</h2><p>スクリプトと notecard は同じ prim に入れます。</p></div></div><ol><li>対応するオブジェクトを rez または編集します。</li><li>Face Animator を入れる prim を開きます。<strong>root prim</strong> を推奨します。</li><li>付属スクリプトと、正確に <code>Config Face Animator</code> という名前の notecard を同じ prim inventory に入れます。</li><li>リンク prim の実際の名前を使って notecard を編集します。</li><li>保存し、読み込み完了まで待ちます。</li><li>Owner chat で configuration valid を確認します。</li></ol><div class="callout warning"><strong>同じ prim</strong><p><code>Config Face Animator</code> はスクリプトと同じ prim inventory に存在する必要があります。</p></div></section>
 <section id="config" class="doc-section searchable"><div class="section-heading"><span class="step">03</span><div><h2>Config Face Animator</h2><p>PART ごとのブロック形式で設定します。</p></div></div><p><code>#</code> で始まる行はコメント、空行は無視されます。</p><pre><code>PART=COINS
 MODE=PENDULUM
@@ -59,10 +74,17 @@ MODE=RANDOM
 FACES=0,1,2,3,4
 START=2
 DELAYS=400,300,200,300,400</code></pre><div class="stats"><div><strong>64</strong><span>論理 PART 上限</span></div><div><strong>8</strong><span>1 PART の FACES 上限</span></div></div><div class="callout info"><strong>実証済み容量</strong><p>v1.6.2 は <strong>64 PART × 5 FACES = 320 frames</strong> で Second Life 上のテストに成功しています。64 × 8 = 512 frames は未テストで保証されません。実際の容量は利用可能な script memory にも依存します。</p></div></section>
-<section id="mesh" class="doc-section searchable"><div class="section-heading"><span class="step">09</span><div><h2>Mesh の準備</h2><p>アニメーション用形状は Second Life へ入れる前に作成します。</p></div></div><pre><code>geometry state
+<section id="mesh" class="doc-section searchable">
+  <div class="section-heading"><span class="step">09</span><div><h2>標準 prim と高度な mesh</h2><p>同じエンジンで単純な face effect と見かけ上の geometry animation の両方を扱えます。</p></div></div>
+  <h3>標準 prim</h3><p>Blender の準備は不要です。既存の番号付き face を FACES に直接指定します。</p>
+  <h3>通常の mesh</h3><p>既存 texture face が切り替えたい状態なら、そのまま使用できます。</p>
+  <h3>Geometry state を持つ mesh</h3><p>各 face に異なる形状を持たせる場合は、mesh を事前に準備します:</p>
+  <pre><code>geometry state
 → mesh material
 → Second Life texture face
-→ FACES で使う番号</code></pre><ul><li>表示/非表示を切り替える各状態に専用 material / texture face が必要です。</li><li>静的 geometry は別 face にして FACES から外します。</li><li>Upload 後の実際の face 番号を Second Life 内で確認してください。</li></ul></section>
+→ FACES で使う番号</code></pre>
+  <p>Face Animator は形状を生成しません。表示状態だけを切り替えます。</p>
+</section>
 <section id="problemas" class="doc-section searchable"><div class="section-heading"><span class="step">10</span><div><h2>トラブルシューティング</h2><p>スクリプトを変更する前の確認。</p></div></div><details><summary>何も動かない</summary><p>Mesh が texture face 方式で準備されているか、PART 名が正確か、FACES index が存在するか確認します。</p></details><details><summary>PBR face が消えない</summary><p>現在の方式は Blinn-Phong alpha を使用します。PBR face には視覚的な効果がありません。</p></details><details><summary>PART が存在しないと言われる</summary><p>起動時 scan に表示された正確な prim 名を使用してください。</p></details><details><summary>読み込みに時間がかかる</summary><p>Notecard は 1 行ずつ読みます。EOF / configuration valid のメッセージまで待ってください。</p></details><details><summary>メモリで設定が拒否される</summary><p>PART または FACES の総数を減らしてください。</p></details></section>
 <section id="referencia" class="doc-section searchable"><div class="section-heading"><span class="step">11</span><div><h2>クイックリファレンス</h2><p>完全な PART ブロック。</p></div></div><pre><code>PART=Exact prim name
 MODE=PENDULUM | LINEAR | RANDOM
@@ -72,5 +94,5 @@ DELAYS=400,300,200,300,400
 REPEAT=2
 REPEAT_DELAY=300</code></pre><table><thead><tr><th>項目</th><th>ルール</th></tr></thead><tbody><tr><td>PART</td><td>リンク prim の正確で一意な名前。</td></tr><tr><td>MODE</td><td>PENDULUM、LINEAR、RANDOM。</td></tr><tr><td>FACES</td><td>2..8 個のアニメーション face index。</td></tr><tr><td>START</td><td>FACES に含まれる必要があります。</td></tr><tr><td>DELAYS</td><td>FACE ごとに 1 値、100..60000 ms。</td></tr><tr><td>REPEAT</td><td>任意: 空、1..1000000、INFINITE。</td></tr><tr><td>REPEAT_DELAY</td><td>任意: 0..86400000 ms。REPEAT 無効時は無視。</td></tr></tbody></table></section><div id="noResults" class="no-results" hidden><h2>一致する項目がありません</h2></div><footer class="site-footer"><strong>Face Animator v1.6.2</strong><span>Face Animator の公開ドキュメントです。製品のソースコードはこのマニュアルでは公開されません。</span></footer></main>
 </div>
-<script src="./app.js?v=face-animator-20261009-2"></script>
+<script src="./app.js?v=face-animator-20261009-3"></script>
 </body></html>
